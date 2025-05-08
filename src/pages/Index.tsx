@@ -9,6 +9,8 @@ import { createConnection, waitForConnectionResponse } from '../utils/connection
 import { issueCredential } from '../utils/credentialUtils';
 import { CredentialFields } from "../components/CredentialFields";
 import { faker } from "@faker-js/faker";
+import { Button } from "../components/ui/button";
+
 const steps: Step[] = [{
   id: 1,
   title: "Download App",
@@ -51,6 +53,11 @@ const Index: React.FC = () => {
     }
   };
   const skipStep = () => {
+    if (currentStep === 2) {
+      // Stop polling if we're skipping from step 2
+      abortControllerRef.current?.abort();
+      setIsPolling(false);
+    }
     setCurrentStep(prev => prev + 1);
   };
   const handleNextStep = () => {
@@ -122,6 +129,15 @@ const Index: React.FC = () => {
               </div>
               <div className="flex-1">
                 <QRDisplay title="Create Connection" description="Scan to establish a secure connection with our organization" qrData={connectionUrl} altText="Scan to connect with organization" step={2} />
+                <div className="flex justify-center mt-6">
+                  <Button 
+                    onClick={skipStep} 
+                    variant="default"
+                    className="bg-primary text-primary-foreground py-3 px-8 rounded-xl hover:bg-primary/90 transition-colors"
+                  >
+                    Already Connected
+                  </Button>
+                </div>
               </div>
             </div>
           </div> : <div className="flex justify-center">

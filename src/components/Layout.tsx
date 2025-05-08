@@ -20,9 +20,9 @@ const Layout: React.FC<LayoutProps> = ({
         <div className="max-w-screen-lg mx-auto flex flex-col items-center gap-4">
           <p className="text-sm text-muted-foreground">Powered by</p>
           <div className="flex items-center justify-center gap-8">
-            <img src="/lovable-uploads/2682e570-ba15-4ecb-ac91-c67ba96a2866.png" alt="Bland" className="h-6 object-contain" />
-            <img src="/lovable-uploads/fa44f062-6b58-4428-9cdc-863bd7834f84.png" alt="Hovi" className="h-6 object-contain" />
-            <img src="/lovable-uploads/7ff404f5-5bc3-4a09-b0a2-d810fd7d9dc6.png" alt="Cheqd" className="h-6 object-contain" />
+            <img src="/uploads/2682e570-ba15-4ecb-ac91-c67ba96a2866.png" alt="Bland" className="h-6 object-contain" />
+            <img src="/uploads/fa44f062-6b58-4428-9cdc-863bd7834f84.png" alt="Hovi" className="h-6 object-contain" />
+            <img src="/uploads/7ff404f5-5bc3-4a09-b0a2-d810fd7d9dc6.png" alt="Cheqd" className="h-6 object-contain" />
           </div>
           <div className="text-sm text-muted-foreground mt-4">This project is open source and licensed under the MIT License. <a target="_blank" href="https://github.com/hovi-id/vAI-frontend"><b>View it on GitHub</b></a></div>
         </div>
