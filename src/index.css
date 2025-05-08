@@ -1,0 +1,180 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 220 100% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 5% 10%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46.1%;
+
+    --accent: 220 100% 96%;
+    --accent-foreground: 220 100% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.85rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 220 100% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 220 100% 20%;
+    --accent-foreground: 220 100% 70%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  #root {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+  }
+  
+  /* Custom glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    @apply rounded-lg border border-white/20 shadow-glass;
+  }
+  
+  /* Custom loading animation */
+  .loading-bg {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-size: 1000px 100%;
+    @apply animate-shimmer;
+  }
+  
+  /* Improved QR container */
+  .qr-container {
+    @apply relative bg-white rounded-xl p-6 shadow-subtle transition-all duration-300;
+  }
+  
+  .qr-container:hover {
+    @apply shadow-lg transform -translate-y-1;
+  }
+  
+  /* Phone input styling */
+  .phone-input {
+    @apply bg-transparent border-b-2 border-primary/50 focus:border-primary outline-none transition-all duration-300 text-2xl w-full py-2 px-1;
+  }
+  
+  /* Step indicator styling */
+  .step-indicator {
+    @apply relative flex items-center justify-center w-10 h-10 rounded-full z-10 transition-all duration-500;
+  }
+  
+  .step-indicator::before {
+    content: '';
+    @apply absolute left-[-100%] w-full h-[2px] bg-muted transition-all duration-300;
+  }
+  
+  .step-indicator:first-child::before {
+    @apply hidden;
+  }
+  
+  .step-indicator.active {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .step-indicator.completed {
+    @apply bg-primary/80 text-primary-foreground;
+  }
+  
+  .step-indicator.completed::before {
+    @apply bg-primary/80;
+  }
+  
+  /* Page transition */
+  .page-transition-enter {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 300ms, transform 300ms;
+  }
+}
