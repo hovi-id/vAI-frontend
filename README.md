@@ -9,6 +9,11 @@ This project showcases the potential of combining decentralized identity (DID) a
 This repository contains the frontend implementation for the [cheqd verfiable AI hackathon](https://dorahacks.io/hackathon/cheqd-verifiable-ai/) project.
 
 
+## Try it
+Experience Verfiable AI in action:  
+👉 [Launch App](https://vai-hackathon-app.hovi.id)
+
+
 ## Technologies used
 
 - [cheqd](https://cheqd.io)
