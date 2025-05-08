@@ -10,7 +10,7 @@ This repository contains the frontend implementation for the [cheqd verfiable AI
 
 
 ## Try it
-Experience Verfiable AI in action:  
+Experience Verifiable AI in action:  
 👉 [Launch App](https://vai-hackathon-app.hovi.id)
 
 
