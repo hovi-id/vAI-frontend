@@ -7,7 +7,7 @@ const Layout: React.FC<LayoutProps> = ({
 }) => {
   return <div className="min-h-screen bg-gradient-to-br from-background to-accent/20 flex flex-col py-0">
       <div className="w-full bg-primary text-primary-foreground py-2 px-4 text-center text-sm">
-        <div className="max-w-screen-md mx-auto">Showcasing Verifiable AI — A project built for the cheqd Verifiable AI Hackathon</div>
+        <div className="max-w-screen-md mx-auto">Making phone calls with AI agents safe and trustworthy, so you always know who’s calling, and they know it’s really you.</div>
       </div>
       
       <main className="flex-1 flex items-center justify-center p-6 mx-0 py-[25px] my-[30px]">
